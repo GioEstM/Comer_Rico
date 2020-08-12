@@ -8,8 +8,8 @@ $email= $_POST['email'];
 
 
 
-$header(" Enviar desde la página de Comer Rico ");
-$mensajeCompleto = $mesaje . "\nAntentamente: ". $nombre;
+$header(" Enviar desde la página de Comer Rico$mensajeCompleto = $mesaje . "\nAntentamente: ". $nom ");
+bre;
 
 mail($destinatario , $asunto, $mensajeCompleto, $header);
 echo "<script>alert('Correo enviado exitosamente')</script>";
