@@ -1,25 +1,18 @@
 <?php
-$name = $_POST['name'];
-$mail = $_POST['mail'];
-$phone = $_POST['phone'];
-$message = $_POST['message'];
+$destinatario= 'comerricodisfruta@gmail.com';
+//correo es 
+$nombre= $_POST['nombre'];
+$asunto= $_POST['asunto'];
+$mesaje= $_POST['mensaje'];
+$email= $_POST['email'];
 
-$header = 'From: ' . $mail . " \r\n";
-$header .= "X-Mailer: PHP/" . phpversion() . " \r\n";
-$header .= "Mime-Version: 1.0 \r\n";
-$header .= "Content-Type: text/plain";
 
-$message = "Este mensaje fue enviado por: " . $name . " \r\n";
-$message .= "Su e-mail es: " . $mail . " \r\n";
-$message .= "Tel�fono de contacto: " . $phone . " \r\n";
-$message .= "Mensaje: " . $_POST['message'] . " \r\n";
-$message .= "Enviado el: " . date('d/m/Y', time());
 
-$para = 'comerricodisfruta@gmail.com';
-$asunto = 'Mensaje de WEB Comer Rico';
+$header(" Enviar desde la página de Comer Rico ");
+$mensajeCompleto = $mesaje . "\nAntentamente: ". $nombre;
 
-mail($para, $asunto, utf8_decode($message), $header);
-
-header("Location:index.html");
+mail($destinatario , $asunto, $mensajeCompleto, $header);
+echo "<script>alert('Correo enviado exitosamente')</script>";
+echo "<script> setTimeout(\" location.href='index.html'\",1000)</script>";
 
 ?>
