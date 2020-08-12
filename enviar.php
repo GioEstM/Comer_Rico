@@ -3,7 +3,7 @@ $destinatario= 'comerricodisfruta@gmail.com';
 //correo es 
 $nombre= $_POST['nombre'];
 $asunto= $_POST['asunto'];
-$mesaje= $_POST['mensaje'];
+$mesaje= $_POST['mesaje'];
 $email= $_POST['email'];
 
 
